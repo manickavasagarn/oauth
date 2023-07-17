@@ -13,14 +13,14 @@ app.get('/', (req, res) => {
 
 app.get('/auth', (req, res) => {
   res.redirect(
-    `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}`,
+    `https://github.com/login/oauth/authorize?client_id=690bf65868acb6c7ef1b`,
   );
 });
 
 app.get('/oauth-callback', ({ query: { code } }, res) => {
   const body = {
-    client_id: process.env.GITHUB_CLIENT_ID,
-    client_secret: process.env.GITHUB_SECRET,
+    client_id: '690bf65868acb6c7ef1b',
+    client_secret: 'c2c294ddc1932e3de3b2bd690c068fea49351cca',
     code,
   };
   const opts = { headers: { accept: 'application/json' } };
